@@ -10,7 +10,7 @@ class MusicParser:
        None
 
 
-    #Takes a MIDI pitch value to analyse  if it is playable
+    #Takes a MIDI pitch value to analyse if it is playable
     def AnalyseSingleNote(self, notePitch):
         del playableList[:]
         self.LoadPlayableList("./resources/playable.txt")  #The default file is for a whistle in D
