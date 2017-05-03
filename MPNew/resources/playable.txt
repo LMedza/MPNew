@@ -1,0 +1,12 @@
+0 C None
+1 C# [False, True, False, False, False, False]
+2 D [True, True, True, True, True, True]
+3 D# None
+4 E [True, True, True, True, True, False]
+5 F None
+6 F# [True, True, True, True, False, False]
+7 G [True, True, True, False, False, False]
+8 G# None
+9 A [True, True, False, False, False, False]
+10 A# None
+11 B [True, False, False, False, False, False]
