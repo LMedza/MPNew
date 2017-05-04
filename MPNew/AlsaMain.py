@@ -4,8 +4,8 @@ from ServoEvent import *
 from FreePlay import *
 
 class AlsaMain:
-
     def main():
+
         se = ServoEvent()
         parser = MusicParser()
         alsaseq.client('RoboWhistle PassThrough', 1, 1, False)  # Set up a new ALSA channel

@@ -14,13 +14,17 @@ class ServoEvent:
         except serial.serialutil.SerialException:
             serialport = serial.Serial("/dev/ttyUSB1")
 
-        serialport.baudrate = 9600  # The baudrate of the servo board serial connection needs to be much lower than most USB devices
+        serialport.baudrate = 9600  #The baudrate of the servo board serial connection needs to be much lower than most USB devices
         # 9600 seems to work well; this can be bumped up further. See the Pololu servo board user manual for mode info
+
+        self.serialport = serialport
 
     # Set up the serial connection
     def SetupSerial(self, servo, speed):
-        serialspeed = chr(0x80) + chr(0x01) + chr(0x01) + chr(servo) + chr(speed)
-        serialport.write(serialspeed)
+        self.serialspeed = chr(0x80) + chr(0x01) + chr(0x01) + chr(servo) + chr(speed)
+        serialport.write(self.serialspeed)
+
+        return self
 
     # Resets all the servos by moving them to the open position (hard coded 90 degrees)
     def ResetServoEvent(self):
