@@ -2,22 +2,20 @@ import serial
 
 # Handles the physical movement of servos; provides low level instructions over serial
 class ServoEvent:
-    global serialport
 
-    #Usually USB0 is the default but sometimes the OS can get confused and see the device as USB1
-    try:
-        serialport = serial.Serial("/dev/ttyUSB0")
-    except serial.serialutil.SerialException:
-        serialport = serial.Serial("/dev/ttyUSB1")
-
-
-
-    serialport.baudrate = 9600 #The baudrate of the servo board serial connection needs to be much lower than most USB devices
-    #9600 seems to work well; this can be bumped up further. See the Pololu servo board user manual for mode info
 
 
     def __init__(self):
-        return None
+        global serialport
+
+        # Usually USB0 is the default but sometimes the OS can get confused and see the device as USB1
+        try:
+            serialport = serial.Serial("/dev/ttyUSB0")
+        except serial.serialutil.SerialException:
+            serialport = serial.Serial("/dev/ttyUSB1")
+
+        serialport.baudrate = 9600  # The baudrate of the servo board serial connection needs to be much lower than most USB devices
+        # 9600 seems to work well; this can be bumped up further. See the Pololu servo board user manual for mode info
 
     # Set up the serial connection
     def SetupSerial(self, servo, speed):
