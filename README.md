@@ -1,4 +1,6 @@
 Robotic Whistle
+Author: Lukasz Medza lum22@aber.ac.uk
+Version: 1.0 (Release)
 --------------------------------
 
 For a detailed user manual see 'Appendix C - User Manual' in the final project report. This document is a cut down quick start version of the user guide
