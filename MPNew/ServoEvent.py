@@ -28,9 +28,7 @@ class ServoEvent:
 
     # Resets all the servos by moving them to the open position (hard coded 90 degrees)
     def ResetServoEvent(self):
-        # Lowest 7 bits
         b1 = 3000 & 127
-        # Highest 7 bits
         b2 = (3000 - (3000 & 127)) / 128
 
         for i in range(0x02, 0x09):
@@ -43,9 +41,7 @@ class ServoEvent:
         if servo < 2:
             servo = servo + 2
 
-        # Lowest 7 bits
         b1 = 2583 & 127
-        # Highest 7 bits
         b2 = (2583 - (2583 & 127)) / 128
 
         resetinstruction = chr(0x80) + chr(0x01) + chr(0x04) + chr(servo) + chr(b2) + chr(b1)
