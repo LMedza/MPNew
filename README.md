@@ -29,7 +29,7 @@ Note; in some cases the baudrate doesn’t update until the next power cycle mea
 
 Running the Program
 --------------------------------
-
+NOTE: THE PROGRAM ONLY SUPPORTS SINGLE TRACK MIDI FILES
 
 The program runs two separate components which both need to run at the same time. Firstly; the Python code can be executed with:
 python AlsaMain.py
